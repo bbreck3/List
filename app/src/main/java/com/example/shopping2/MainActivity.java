@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
      *  Button, TextView, and EditText Components
      *
      */
-
-  ;
+    EditText itemName, itemPrice, itemQuantity;
+    Button add;
 
 
     @Override
@@ -53,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText itemName = (EditText)findViewById(R.id.et_item_name);
-        EditText itemPrice = (EditText)findViewById(R.id.et_item_amount);
-        EditText itemQuantity = (EditText)findViewById(R.id.et_item_quantity);
-        //Button add = (Button)findViewById(R.id.btnAdd);
+        itemName = (EditText)findViewById(R.id.et_item_name);
+        itemPrice = (EditText)findViewById(R.id.et_item_amount);
+        itemQuantity = (EditText)findViewById(R.id.et_item_quantity);
+        add = (Button)findViewById(R.id.btnAdd);
 
 
         // get the listview
