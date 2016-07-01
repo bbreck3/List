@@ -27,7 +27,9 @@
 
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/tv_item_quantity"
-        android:layout_alignEnd="@+id/tv_item_quantity" />
+        android:layout_alignEnd="@+id/tv_item_quantity"
+        android:layout_alignLeft="@+id/et_item_amount"
+        android:layout_alignStart="@+id/et_item_amount" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,7 +39,9 @@
         android:id="@+id/tv_item_quantity"
         android:layout_alignTop="@+id/tv_item_amount"
         android:layout_alignRight="@+id/linearLayout"
-        android:layout_alignEnd="@+id/linearLayout" />
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_toRightOf="@+id/et_item_amount"
+        android:layout_toEndOf="@+id/et_item_amount" />
     <EditText
         android:layout_width="79dp"
         android:layout_height="wrap_content"
@@ -62,8 +66,8 @@
         android:ems="10"
         android:id="@+id/et_item_amount"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/tv_item_amount"
-        android:layout_alignStart="@+id/tv_item_amount" />
+        android:layout_toRightOf="@+id/et_item_name"
+        android:layout_toEndOf="@+id/et_item_name" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -88,9 +92,9 @@
         android:layout_height="wrap_content"
         android:text="Add"
         android:id="@+id/btnAdd"
-        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
 
 
 </RelativeLayout>
