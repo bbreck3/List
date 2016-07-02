@@ -33,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
     ExpandableListView expListView;
     List<String> listDataHeader;
 
+
+
+
+
+
+
+
     /**
      *  Hashmap for easy loopup of the items in the list
      *
@@ -47,16 +54,57 @@ public class MainActivity extends AppCompatActivity {
     EditText itemName, itemPrice, itemQuantity;
     Button add;
 
+    /**
+     *
+     *  String, int, and other variables
+     *
+     */
+
+    String itmName, itmPrice, itmAmount;
+    int numItmPrice, numItmAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*
+
+            Top item component instantiation: TextView, EditText and Buttons
+         */
 
         itemName = (EditText)findViewById(R.id.et_item_name);
         itemPrice = (EditText)findViewById(R.id.et_item_amount);
         itemQuantity = (EditText)findViewById(R.id.et_item_quantity);
+
+        //Button add instantiation and on click listener
         add = (Button)findViewById(R.id.btnAdd);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itmName = itemName.getText().toString();
+
+                itmPrice = itemPrice.getText().toString();
+                numItmPrice = Integer.parseInt(itmPrice);
+
+                itmAmount = itemQuantity.getText().toString();
+                numItmAmount = Integer.parseInt(itmAmount);
+
+                itmName = itemName.getText().toString();
+                /**
+                 *      Test to see if all information was be taken in and correctly by the
+                 *      button click listener on click
+                 *
+                 *      Test successfull!!
+                 *
+                 *      Uncomment as needed for testing and debbuging purposes
+                 */
+                Toast.makeText(MainActivity.this, "Name: " + itmName + " \nPrice: " + itmPrice + "\n Amount: " + itmAmount + "\n Nums: " + Integer.toString(numItmPrice) + " : " + Integer.toString(numItmAmount), Toast.LENGTH_SHORT).show();
+
+
+
+
+            }
+        });
 
 
         // get the listview
@@ -166,13 +214,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Adding child data
         List<String> shopList = new ArrayList<String>();
-        shopList.add("The Shawshank Redemption");
+        //shopList.add(itmName + ", " + itmPrice + ", " + itmAmount);
+
         shopList.add("The Godfather");
+
         shopList.add("The Godfather: Part II");
         shopList.add("Pulp Fiction");
         shopList.add("The Good, the Bad and the Ugly");
         shopList.add("The Dark Knight");
         shopList.add("12 Angry Men");
+
 
         /***
          *
@@ -191,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
          */
 
         /**
-         *          List 1
+         *          List 2
          *
 
         List<String> nowShowing = new ArrayList<String>();
