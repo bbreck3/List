@@ -9,8 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.shopping2.MainActivity"
+    tools:context="com.example.shopping3.MainActivity"
     tools:showIn="@layout/activity_main">
+
     <TextView
         android:layout_width="132dp"
         android:layout_height="wrap_content"
@@ -38,58 +39,43 @@
         android:text="Quantity"
         android:id="@+id/tv_item_quantity"
         android:layout_alignTop="@+id/tv_item_amount"
-        android:layout_alignRight="@+id/linearLayout"
-        android:layout_alignEnd="@+id/linearLayout"
+
         android:layout_toRightOf="@+id/et_item_amount"
         android:layout_toEndOf="@+id/et_item_amount" />
     <EditText
         android:layout_width="79dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/et_item_quantity"
         android:layout_gravity="right"
-        android:layout_above="@+id/linearLayout"
+        android:layout_below="@+id/tv_item_quantity"
+
         android:layout_alignLeft="@+id/tv_item_quantity"
         android:layout_alignStart="@+id/tv_item_quantity" />
 
     <EditText
         android:layout_width="64dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:id="@+id/et_item_name"
-        android:layout_alignParentTop="true" />
+        android:layout_below="@+id/tv_item_name" />
 
     <EditText
         android:layout_width="85dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/et_item_amount"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentTop="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:layout_toRightOf="@+id/et_item_name"
-        android:layout_toEndOf="@+id/et_item_name" />
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/et_item_name"
-        android:id="@+id/linearLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-
-
-
-        <ExpandableListView
-            android:layout_width="match_parent"
-            android:layout_height="279dp"
-            android:id="@+id/expandableListView" />
-    </LinearLayout>
+        android:layout_toEndOf="@+id/et_item_name"
+        android:layout_below="@+id/tv_item_amount"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:text="Add"
         android:id="@+id/btnAdd"
         android:layout_alignParentRight="true"
@@ -97,4 +83,23 @@
         android:layout_alignParentTop="true" />
 
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:id="@+id/listView"
+        android:layout_below="@+id/et_item_quantity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:id="@+id/btnReset"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/listView"
+        android:layout_alignEnd="@+id/listView" />
 </RelativeLayout>
