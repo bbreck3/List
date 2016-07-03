@@ -87,19 +87,30 @@
         android:layout_width="wrap_content"
         android:layout_height="350dp"
         android:id="@+id/listView"
-        android:layout_below="@+id/et_item_quantity"
+        android:layout_below="@+id/btnAdd"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:text="Reset"
         android:id="@+id/btnReset"
         android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/tv_item_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/tv_total"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/et_item_quantity"
+        android:layout_alignTop="@+id/btnReset"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/listView"
-        android:layout_alignEnd="@+id/listView" />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

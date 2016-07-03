@@ -13,17 +13,23 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText itmName, itmPrice, itmAmount;
+    TextView total;
     Button btnAdd, btnReset;
     ArrayList<String> items;
     ListView listView;
     ArrayAdapter<String> arrayAdapter;
+    //Variables
+    double sum =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         itmName = (EditText)findViewById(R.id.et_item_name);
         itmAmount = (EditText)findViewById(R.id.et_item_amount);
         itmPrice = (EditText)findViewById(R.id.et_item_quantity);
+
+        //TextView Stuff
+        total = (TextView)findViewById(R.id.tv_total);
 
         //List Stuff
         listView = (ListView)findViewById(R.id.listView);
@@ -80,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
                       String temp = "";
                       String name = itmName.getText().toString();
                       String price = itmAmount.getText().toString();
+                      if(price !="") {
+                          double tempPrice = Double.parseDouble(price);
+                          sum+=tempPrice;
+                          total.setText(Double.toString(sum));
+                      }
                       String quantity = itmPrice.getText().toString();
 
                       temp += name + ", " + price + ", " + quantity;
